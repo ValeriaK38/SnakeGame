@@ -1,5 +1,7 @@
 package org.example;
 
+import org.example.View.GameFrame;
+
 import javax.swing.*;
 
 public class SnakeGame implements Runnable{
