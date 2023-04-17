@@ -1,15 +1,17 @@
-package org.example;
-import org.example.View.GamePanel;
+package org.example.View;
+import org.example.Control.SnakeGameController;
+import org.example.Control.SnakeGameService;
 
 import javax.swing.*;
 
 public class GameFrame extends JFrame {
 
-    GameFrame() {
+    public GameFrame() {
 
-//        SnakeGameController controller = new SnakeGameController();
-        GamePanel gamePanel = new GamePanel();
-        this.add(gamePanel);
+        SnakeGameController gameController = new SnakeGameController(new SnakeGameService(null));
+        SnakeGameService myService = new SnakeGameService(gameController);
+        gameController.setSnakeGameService(myService);
+        this.add(gameController);
         this.setTitle("Snake");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setResizable(false);
@@ -17,7 +19,7 @@ public class GameFrame extends JFrame {
         this.setVisible(true);
         this.setLocationRelativeTo(null); // Displays the frame in the middle of the screen
 
-        Thread gameThread = new Thread(gamePanel); // the game thread
+        Thread gameThread = new Thread(gameController); // the game thread
         gameThread.start();
     }
 }

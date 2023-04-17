@@ -1,5 +1,7 @@
 package org.example.Model;
 
+import java.util.Arrays;
+
 public class Snake {
 
     private final int[] x = new int[Measures.GAME_UNITS.getValue()]; // to hold the x coordinates of the body parts of the snake
@@ -106,6 +108,16 @@ public class Snake {
             return false;
         }
         return true;
+    }
+
+    @Override
+    public String toString() {
+        return "Snake{" +
+                "x=" + Arrays.toString(x) +
+                ", y=" + Arrays.toString(y) +
+                ", bodyParts=" + bodyParts +
+                ", direction=" + direction +
+                '}';
     }
 }
 
