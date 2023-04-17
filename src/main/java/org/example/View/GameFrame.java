@@ -1,7 +1,6 @@
 package org.example.View;
 import org.example.Control.SnakeGameController;
 import org.example.Control.SnakeGameService;
-//import org.example.View.GamePanel;
 
 import javax.swing.*;
 
@@ -9,9 +8,6 @@ public class GameFrame extends JFrame {
 
     public GameFrame() {
 
-//        SnakeGameController controller = new SnakeGameController();
-//        GamePanel gamePanel = new GamePanel();
-//        this.add(gamePanel);
         SnakeGameController gameController = new SnakeGameController(new SnakeGameService(null));
         SnakeGameService myService = new SnakeGameService(gameController);
         gameController.setSnakeGameService(myService);
