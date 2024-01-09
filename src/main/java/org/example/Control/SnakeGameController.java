@@ -85,5 +85,4 @@ public class SnakeGameController extends JPanel implements ActionListener, Runna
     public Score getScore() {
         return score;
     }
-
 }
